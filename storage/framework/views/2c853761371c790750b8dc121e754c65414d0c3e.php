@@ -1,0 +1,1 @@
+<div class="alert <?php echo e($alertType); ?>"><?php echo e($alertMessage); ?></div><?php /**PATH /var/www/html/laravel8/resources/views/notify.blade.php ENDPATH**/ ?>
