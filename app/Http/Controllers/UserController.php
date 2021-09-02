@@ -22,7 +22,7 @@ class UserController extends Controller
 
        // $item = DB::table('users')->find(2);
 
-       $item =  DB::table('users')->where('email', 'ngantranbd@gmail.com')->get();
+      // $item =  DB::table('users')->where('email', 'ngantranbd@gmail.com')->get();
 
         //dd($item);
 

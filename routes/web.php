@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Http\Controllers\TasksController;
 
 
 /*
@@ -256,3 +257,19 @@ use App\Http\Controllers\UserController;
 Route::get('/xemuser',[Usercontroller::class, 'index']);
 
 Route::get('/getlistuser',[Usercontroller::class, 'getlist']);
+
+Route::get('/home-blog', [App\Http\Controllers\HomeController::class, 'index'])->name('home-blog');
+
+
+
+
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+   // Route::get('/dashboard',[TasksController::class, 'index'])->name('dashboard');
+
+    Route::get('/task',[TasksController::class, 'add']);
+    Route::post('/task',[TasksController::class, 'create']);
+    
+    Route::get('/task/{task}', [TasksController::class, 'edit']);
+    Route::post('/task/{task}', [TasksController::class, 'update']);
+});
