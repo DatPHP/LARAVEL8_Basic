@@ -6,6 +6,7 @@ use Illuminate\Http\Response;
 use App\Http\Controllers\TasksController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -265,7 +266,7 @@ Route::get('/home-blog', [App\Http\Controllers\HomeController::class, 'index'])-
 
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
-   // Route::get('/dashboard',[TasksController::class, 'index'])->name('dashboard');
+    //Route::get('/dashboard',[TasksController::class, 'index'])->name('dashboard');
 
     Route::get('/task',[TasksController::class, 'add']);
     Route::post('/task',[TasksController::class, 'create']);
@@ -273,3 +274,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/task/{task}', [TasksController::class, 'edit']);
     Route::post('/task/{task}', [TasksController::class, 'update']);
 });
+
+
+
+//Auth::routes();
+
+Route::get('todos/home', [App\Http\Controllers\TodoController::class, 'index']);
+Route::post('/todos/create', [App\Http\Controllers\TodoController::class, 'store']);
+Route::put('/todos/{todo}', [App\Http\Controllers\TodoController::class, 'update']);
+Route::delete('/todos/{todo}', [App\Http\Controllers\TodoController::class, 'destroy']);

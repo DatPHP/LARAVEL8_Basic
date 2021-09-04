@@ -36,6 +36,12 @@ class TasksController extends Controller
     	return redirect('/dashboard'); 
     }
 
+
+    
+
+
+
+
     public function edit(Task $task)
     {
 
@@ -62,6 +68,7 @@ class TasksController extends Controller
     		$task->description = $request->description;
 	    	$task->save();
 	    	return redirect('/dashboard'); 
-    	}    	
+    	}    
+
     }
 }

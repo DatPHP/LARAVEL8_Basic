@@ -13,11 +13,20 @@
         <!-- Styles -->
         <link rel="stylesheet" href="<?php echo e(mix('css/app.css')); ?>">
 
+        <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+     
         <?php echo \Livewire\Livewire::styles(); ?>
 
 
         <!-- Scripts -->
+        <!-- JQUERY-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <!-- END JQUERY -->
+      
         <script src="<?php echo e(mix('js/app.js')); ?>" defer></script>
+
     </head>
     <body class="font-sans antialiased">
         <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
@@ -37,15 +46,15 @@
             <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('navigation-menu')->html();
-} elseif ($_instance->childHasBeenRendered('UYHl6Xe')) {
-    $componentId = $_instance->getRenderedChildComponentId('UYHl6Xe');
-    $componentTag = $_instance->getRenderedChildComponentTagName('UYHl6Xe');
+} elseif ($_instance->childHasBeenRendered('emMfVXG')) {
+    $componentId = $_instance->getRenderedChildComponentId('emMfVXG');
+    $componentTag = $_instance->getRenderedChildComponentTagName('emMfVXG');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('UYHl6Xe');
+    $_instance->preserveRenderedChild('emMfVXG');
 } else {
     $response = \Livewire\Livewire::mount('navigation-menu');
     $html = $response->html();
-    $_instance->logRenderedChild('UYHl6Xe', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('emMfVXG', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -62,16 +71,30 @@ echo $html;
 
             <!-- Page Content -->
             <main>
+
             <?php if(isset($slot)): ?>
-             <?php echo e($slot); ?>
+                <?php echo e($slot); ?>
 
             <?php endif; ?>
+
+            <?php echo $__env->yieldContent('content'); ?>
+
             </main>
         </div>
 
         <?php echo $__env->yieldPushContent('modals'); ?>
 
         <?php echo \Livewire\Livewire::scripts(); ?>
+
+
+
+         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+         <!-----
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            ----->
+   
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     </body>
 </html>

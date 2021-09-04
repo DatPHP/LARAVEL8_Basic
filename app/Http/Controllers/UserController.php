@@ -30,4 +30,11 @@ class UserController extends Controller
         return view('user.getlist', ['users' => $users]);
     }
 
+
+    
+
+
+ 
+
+
 }
