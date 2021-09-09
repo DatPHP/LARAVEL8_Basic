@@ -276,10 +276,25 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
 });
 
 
+use Illuminate\Support\Facades\Auth;
 
-//Auth::routes();
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
 
 Route::get('todos/home', [App\Http\Controllers\TodoController::class, 'index']);
 Route::post('/todos/create', [App\Http\Controllers\TodoController::class, 'store']);
 Route::put('/todos/{todo}', [App\Http\Controllers\TodoController::class, 'update']);
 Route::delete('/todos/{todo}', [App\Http\Controllers\TodoController::class, 'destroy']);
+
+});
+
+use App\Http\Controllers\User_Controller;
+Route::get('/user/news/create',[User_Controller ::class,'create']);
+Route::post('/user/news/store',[User_Controller::class, 'store']);
+Route::get('/user/view',[User_Controller::class, 'index']);
+Route::get('/user/view/edit/{id}',[User_Controller::class, 'edit']);
+Route::PATCH('/user/view/update/{id}', [User_Controller::class, 'update']);
+Route::DELETE('/user/view/delete/{id}', [User_Controller::class,'destroy']);
+
+
+use App\Http\Controllers\truyenController;
+Route::get('list_truyen',[truyenController::class,'index']);

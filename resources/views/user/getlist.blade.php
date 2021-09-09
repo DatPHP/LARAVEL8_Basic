@@ -14,6 +14,7 @@
             <td>{{ $user->id}}</td>
             <td>{{ $user->name}}</td>
             <td>{{ $user->email}}</td>
+            <td>Edit | Delete</td>
          </tr>
          @endforeach
       </table>
